@@ -1,0 +1,14 @@
+
+/*ie6fix*/
+ .items-list li {
+    _width: 1000px;
+    _margin-left: -12px;
+}
+.collections-list .item-detail .item-img img {
+    _width: 100px;
+}
+.pop-out {
+    _position: absolute;
+    _top:expression((document.body.clientHeight/2) - (document.getElementById(deleteBoxId).offsetHeight/2) +((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+'px');
+    _left:expression((document.body.clientWidth/2) - (document.getElementById(deleteBoxId).offsetWidth/2) +((e=document.documentElement.scrollLeft)?e:document.body.scrollLeft)+'px');
+}

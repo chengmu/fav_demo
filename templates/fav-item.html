@@ -1,0 +1,73 @@
+    <%var avaliableFlag = item && item.avaliable;%>
+    <div data-url="<%=item.url%>" class="<%=avaliableFlag ? '' : 'not-avalible'%>" >
+        <div class="item-detail">
+            <a href="<%=item.cpsUrl%>" target="_blank" class="item-img"  clkAction="FAVOR_ITEM_COLLECT_CLICK" data-position="IMG">
+                <%if (item.img !== undefined) {%>
+                    <img src="<%=item.img%>" alt="<%=item.title%>">
+                <%}%>
+            </a>
+            <div class="item-content">
+                <a href="<%=item.cpsUrl%>" clkAction="FAVOR_ITEM_COLLECT_CLICK" data-position="TITLE" target="_blank" class="title"><%=item.title%></a>
+
+                <p class="shop-price"><span class="shop"><%=item.domainName%></span>：<span class="price"><%=(item.curPrice === '-1') ? '暂无价格' : item.curPrice + item.priceunit%></span></p>
+                <%if (!avaliableFlag) {%>
+                    <p class="not-avalible">无货</p>
+                <%} else {%>
+                    <%if (item.inSalesPromotion) {%>
+                        <p class="deprice"><span class="icon icon-deprice"></span>价格下降<span class="depriced-number"><%=parseInt(item.lastSecondPrice * 100 - item.curPrice * 100 ) / 100%><%=item.priceunit%></span></p>
+                    <%}%>
+                    <%if (item.promotionInfo !== undefined) {%>
+                        <p class="promotion"><span class="icon icon-promotion"></span><%=item.promotionInfo%></p>
+                    <%}%>
+                <%}%>
+            </div>
+            <div class="item-ops">
+                <a class="setting" href="javascript:;" clkAction="">设置</a>
+                <a class="delete" href="javascript:;" clkAction="FAVOR_ITEM_DEL_CLICK">删除收藏</a>
+            </div>
+        </div>
+        <%var recmds = item.recmds;%>
+        <%if (recmds !== undefined) {%>
+            <div class="items-recmds">
+                <span class="prev prev-disable" data-btn-type="prev"  clkAction="FAVOR_ITEM_RECPAGECHANGE_CLICK" data-position="PREV"></span>
+            <div class="contents-wrapper">
+                <div class="recom-contents">
+                    <%for (var j = 1, gl = recmds.length;j <= gl;j++) {%>
+                        <%var recoItem = recmds[j - 1];%>
+                        <%if (/^DISCOUNT.+/g.test(recoItem.type)) {%>
+                            <span class="recom-content">
+                                <span class="icon special-offer-tip"></span>
+                                <a clkAction="FAVOR_ITEM_REC_CLICK" target="_blank" href="<%=recoItem.url%>">
+                                    <img src="<%=recoItem.imgUrl%>" title="<%=recoItem.title%>">
+                                </a>
+                                <span class="intro">
+                                    <span class="icon icon-depriced"></span><span class="cur-price"><%=recoItem.price%><%=recoItem.priceUnit%></span>
+                                    <span class="ori-price"><%=recoItem.maxPrice%><%=recoItem.priceUnit%></span>
+                                </span>
+                            </span>
+                        <%} else if (/^ITEMCF.+/g.test(recoItem.type)) {%>
+                            <span class="recom-content">
+                                <a clkAction="FAVOR_ITEM_REC_CLICK" target="_blank" href="<%=recoItem.url%>">
+                                    <img src="<%=recoItem.imgUrl%>" title="<%=recoItem.title%>">
+                                </a>
+                                <span class="intro">
+                                    <span class="cur-price"><%=recoItem.price%><%=recoItem.priceUnit%></span>
+                                    <span class="people-counts"><%=recoItem.covisitNum%>人还看</span>
+                                </span>
+
+                            </span>
+                        <%} else if (/^BRAND.+/g.test(recoItem.type)) {%>
+                            <!-- 品牌特卖 -->
+                        <%}%>
+                    <%}%>
+                    <span class="recom-content">
+                        <p class="no-more-recommand">暂无更多</p>
+                    </span>
+                </div>
+            </div>
+                <span class="next <%=recmds.length >= 3 ? '' : 'next-disable' %>"  data-btn-type="next" clkAction="FAVOR_ITEM_RECPAGECHANGE_CLICK" data-position="NEXT"></span>
+            </div>
+        <%} else {%>
+            <p class="no-recommands">暂无你可能喜欢的商品推荐~</p>
+        <%}%>
+    </div>

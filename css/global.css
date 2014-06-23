@@ -1,0 +1,133 @@
+/**
+ * 布局和头部导航
+ */
+.container {
+    width: 100%;
+    background: white;
+}
+.hd {
+    width: 100%;
+}
+.ft {
+    width: 990px;
+    margin: 0 auto;
+}
+.hd .top {
+    width: 990px;
+    margin: 0 auto;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+}
+.hd .top .logo {
+    padding-top: 3px;
+    display: block;
+}
+.hd .top .boxwrap {
+}
+.hd .top .boxwrap a {
+    padding: 0 10px;
+    color: #999;
+    display: inline-block;
+    /* margin: 0 0 0 -5px; */
+}
+.hd .top .boxwrap a:hover {
+    background-color: #eee;
+    color: #333;
+    text-decoration: none;
+}
+.hd .top .top-nav {
+}
+.hd .top .top-nav {
+    font-size: 12px;
+    color: #666;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 30px;
+    line-height: 30px;
+}
+.hd .top .top-nav a {
+    color: #666;
+}
+.hd .nav {
+    height: 70px;
+    background: #fd8712;
+}
+.hd .nav .nav-inner {
+    width: 990px;
+    margin: 0 auto;
+    line-height: 70px;
+    position: relative;
+}
+.hd .nav .nav-inner a {
+    float: left;
+    width: 100px;
+    /* border-left: 1px solid #e87c11; */
+    height: 70px;
+    text-align: center;
+    color: #814810;
+    font-size: 16px;
+}
+.hd .nav .nav-inner a.last {
+    border-right: 1px solid #e87c11;
+}
+ .hd .nav .nav-inner {
+}
+.hd .nav .nav-inner .logo {
+    line-height: 66px;
+}
+.hd .nav .nav-inner .logo img {
+    vertical-align: middle;
+}
+.hd .nav .nav-inner .figure {
+    position: absolute;
+    right: 0;
+    top: 7px;
+}
+.bd {
+    width: 990px;
+    margin: 0 auto;
+    position: relative;
+}
+/*选项卡导航：收藏夹、降价提醒*/
+ .navs {
+    font-family: Microsoft Yahei;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 36px;
+    height: 36px;
+    margin: 20px 0 0;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 4px 0 0;
+}
+.navs .nav {
+    padding: 0 10px .3em;
+    color: #333;
+    position: relative;
+    cursor:pointer;
+}
+.navs .active, .navs .nav:hover {
+    color: #fd8712;
+    border-bottom: 2px solid #fd8712;
+}
+.navs ins {
+    text-decoration: none;
+    color: #e5e5e5;
+    text-shadow: 1px 1px 1px #f6f6f6;
+}
+.navs .nav .notify-num {
+    color: #fd8712;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.go-top {
+    display: block;
+    position: fixed;
+    bottom: 205px;
+    margin-left: 1020px;
+    height: 33px;
+    width: 33px;
+    background: url('images/goTop.jpg') 0 0 no-repeat;
+}

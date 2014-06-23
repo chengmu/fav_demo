@@ -1,0 +1,43 @@
+/**
+ * 图标管理
+ */
+ .icon {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    vertical-align: -4px;
+    background: url(http://zhushou.huihui.cn/images/myspace/icon.png) 0 0 no-repeat;
+    margin-right: 3px;
+    /*background: url(images/icon.png) 0 0 no-repeat;*/
+}
+/*有文字的图标*/
+ .icon-sp {
+    line-height: 16px;
+    color: #fff;
+    text-align: center;
+}
+.icon-tip {
+    background-position: 0px -31px;
+}
+.icon-delete {
+    background-position: -31px 0;
+}
+.icon-broadcast {
+    background-position: 0 0;
+}
+.icon-promotion {
+    background-position: 1px -16px;
+}
+.icon-deprice {
+    background-position: -15px -16px;
+}
+.icon-setting {
+    background-position: -15px 0;
+}
+.icon-fail {
+    background-position: 0 -98px;
+    width: 23px;
+    height: 23px;
+    vertical-align: -9px;
+    margin-right: 10px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta charset="UTF-8">
+<title>我的收藏夹</title>
+<link type="image/x-icon" href="http://shared.ydstatic.com/gouwuex/images/front/favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/global.css">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<link rel="stylesheet" type="text/css" href="css/icons.css">
+<link rel="stylesheet" type="text/css" href="css/fav.css">
+<link rel="stylesheet" type="text/css" href="css/iefix.css">
+</head>
+<body>
+<script>
+    var ENVIRO_DEBUG = true;
+    // 开发环境
+</script>
+<div class="container">
+    <div id="hd" class="hd">
+        <div class="top">
+            <sapn class="boxwrap">
+                <a href="http://www.huihui.cn" title="惠惠首页">惠惠首页</a>
+                <a href="http://www.huihui.cn/ihome" title="我的关注">我的关注</a>
+                <a href="http://www.huihui.cn/guide/series" title="购物锦囊">购物锦囊</a>
+                <a href="http://www.huihui.cn/mall" title="购物返现">购物返现</a>
+                <a href="http://zhushou.huihui.cn" title="购物助手">购物助手</a>
+            </sapn>
+            <span class="top-nav">
+                <!-- 未登录 -->
+                <!-- #if("$!isLogin" == "false") -->
+                <a href="http://www.huihui.cn/login?url=http%3A%2F%2Fzhushou.huihui.cn%2Fmyzhushou">登录</a>
+                <!-- #else -->
+                <!-- 已经登录 -->
+                <span class="userInfo">你好，<span class="username">$!email</span> [<a href="http://www.huihui.cn/logout?url=http%3A%2F%2Fzhushou.huihui.cn%2Fmyzhushou">退出</a>]</span>
+                <!-- #end -->
+                <a href="http://www.huihui.cn/">惠惠网</a>
+            </span>
+
+        </div>
+        <div class="nav">
+            <div class="nav-inner">
+                <a href="http://zhushou.huihui.cn/" class="logo">
+                    <img src="images/logo.jpg" alt="惠惠购物助手">
+                </a>
+                <span class="figure">
+                    <img src="images/figure.jpg" alt="聪明网购不吃亏">
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="bd">
+        <div tab-wraper class="tab-wraper" data-name="home">
+            <div class="navs" tab-navs>
+                <span class="nav" tab-nav data-name="fav">收藏夹</span>
+                <ins>|</ins>
+                <span class="nav" tab-nav data-name="msg">消息</span>
+            </div>
+            <div tab-contents class="tab-contents">
+                <div class="tab-content" tab-content>nav1</div>
+                <div class="tab-content" tab-content>nav2</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="scripts/libs/jquery-1.11.1.min.js"></script>
+<script src="scripts/libs/underscore-min.js"></script>
+<script src="scripts/libs/json2.js"></script>
+<script src="scripts/libs/backbone-min.js"></script>
+<script src="scripts/libs/sea-debug.js"></script>
+<script src="scripts/libs/seajs-text.js"></script>
+<script type="text/javascript">
+seajs.config({
+    base: './scripts/',
+    debug: true,
+    charset : 'utf-8'
+});
+seajs.use('index');
+</script>
+</body>
+</html>
