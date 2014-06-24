@@ -81,6 +81,12 @@ define(function (require, exports, module) {
     // console.log('>>>>> has hash in current url : ', hasHash);
     // 默认展开的 tab
     if(!hasHash) router.navigate('home/fav/1', {trigger: true});
+
+    require('./hoverHistory.js');
+
+    require('./depriceReminder.js');
+
 });
+
 
 

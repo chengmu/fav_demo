@@ -1,0 +1,229 @@
+
+#youdaoGWZS_hover-tips {
+    background-color: #FFF;
+    width: 265px;
+    font-family: Arial, Simsun, Helvetica, sans-serif;
+    text-align: left;
+    z-index: 2147483647 !important;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+#youdaoGWZS_hover-tips .youdaoGWZS_hover-tips-hd {
+    height: 3px;
+    width: 100%;
+    background-color: #fdd472;
+    border-bottom: 1px solid #deba64;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+#youdaoGWZS_hover-tips h3 {
+    background-image: none;
+    background-color: #f7f7f7;
+    background-position: -8px -589px;
+    background-repeat: repeat-x;
+    border-bottom: 1px solid #eae9e9;
+    color: #6d6d6d;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 35px;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+}
+#youdaoGWZS_hover-tips h3 .hui-logo {
+    background-image: url('./../images/hoverHistory.png');
+    background-position: 0 0;
+    display: block;
+    _display: inline;
+    float: left;
+    height: 20px;
+    margin: 8px 9px 0 8px;
+    width: 107px;
+}
+#youdaoGWZS_hover-tips img {
+    _display: inline;
+    float: left;
+    margin-left: 15px;
+    margin-bottom: 36px;
+}
+#youdaoGWZS_hover-tips ul {
+    font-size: 12px;
+    float: left;
+    height: 110px;
+    list-style: none;
+    margin: 0;
+    margin-left: -6px;
+    padding: 0;
+}
+#youdaoGWZS_hover-tips ul li {
+    color: #666;
+    text-align: left;
+    overflow: hidden;
+    word-wrap: break-word;
+    width: 44px;
+}
+#youdaoGWZS_hover-tips .min {
+    margin-top: 55px;
+}
+#youdaoGWZS_hover-tips .todayMin {
+    color: #f23d4f;
+}
+#youdaoGWZS_hover-tips .todayPrice {
+    color: #666;
+    left: 219px;
+    font-size: 12px;
+    position: absolute;
+    top: 88px;
+}
+#youdaoGWZS_hover-tips .mothsAgo {
+    clear: left;
+    color: #999;
+    font-size: 12px;
+    left: 5px;
+    margin: 8px 0 8px 15px;
+    position: absolute;
+    top: 137px;
+}
+#youdaoGWZS_hover-tips .mothsAgo .longTime {
+    margin-right: 60px;
+}
+#youdaoGWZS_hover-tips {
+    border: 1px solid #dfdfdf;
+    border-top-width: 0;
+}
+#youdaoGWZS_hover-tips .arrow {
+    background-image: url('./../images/hoverHistory.png');
+    display: block;
+    height: 24px;
+    position: absolute;
+    width: 11px;
+    z-index: 2;
+}
+#youdaoGWZS_hover-tips .left {
+    background-position: 0 -20px;
+    left: -8px;
+}
+#youdaoGWZS_hover-tips .right {
+    background-position: -790px -515px;
+    left: 264px;
+    *left: 261px;
+}
+#youdaoGWZS_hover-tips .see-guide {
+    background-color: #FFF;
+    float: left;
+    width: 265px;
+    zoom: 1;
+    position: relative;
+    margin-top: -3px;
+}
+#youdaoGWZS_hover-tips .see-guide a {
+    color: #666;
+    font: 12px/150% Arial, Verdana, "宋体b8b体4f53";
+    margin: 5px 0 8px 40px;
+    display: block;
+    max-height: 33px;
+    margin-right: 7px;
+    max-height: 36px\9;
+    overflow: hidden;
+}
+#youdaoGWZS_hover-tips .see-guide a:hover {
+    color: #c03;
+    text-decoration: underline;
+}
+#youdaoGWZS_hover-tips .see-guide i {
+    display: block;
+    position: absolute;
+    background-image: url('./../images/hoverHistory.png');
+    top: 7px;
+    left: 20px;
+    width: 15px;
+    height: 14px;
+}
+#hui-plughistory .hui-price-trend-share, #youdaoGWZShistory .hui-price-trend-share, #youdaoGWZS_hover-tips .hui-price-trend-share {
+    float: left;
+    position: relative;
+    top: -10px;
+    padding-top: 6px;
+    padding-left: 42px;
+    color: blue;
+}
+#hui-plughistory .hui-price-trend-share i, #youdaoGWZShistory .hui-price-trend-share i, #youdaoGWZS_hover-tips .hui-price-trend-share i {
+    display: block;
+    position: absolute;
+    background-position: 0 -48px;
+    background-image: url('./../images/hoverHistory.png');
+    top: 6px;
+    left: 17px;
+    width: 19px;
+    height: 17px;
+}
+#hui-plughistory .hui-price-trend-share:hover, #youdaoGWZShistory .hui-price-trend-share:hover, #youdaoGWZS_hover-tips .hui-price-trend-share:hover {
+    text-decoration: underline;
+}
+#youdaoGWZS_hover-tips .other-vendor-wrapper {
+    clear: both;
+    border-top: #f2f2f2 solid 1px;
+    float: left;
+    position: relative;
+    padding-top: 5px;
+    width: 265px;
+    height: 30px;
+}
+#youdaoGWZS_hover-tips .other-vendor-wrapper i {
+    display: block;
+    position: absolute;
+    background-position: -480px -500px;
+    background-image: url('./../images/hoverHistory.png');
+    top: 8px;
+    left: 20px;
+    width: 15px;
+    height: 14px;
+}
+#youdaoGWZS_hover-tips .other-vendor-wrapper .other-vendor-content {
+    background-color: #FFF;
+    margin: 0;
+    color: #999;
+    text-indent: 40px;
+}
+#youdaoGWZS_hover-tips .other-vendor-wrapper .other-vendor-content span {
+    display: block;
+    vertical-align: text-top;
+    margin-bottom: 8px;
+    margin-top: -10px;
+}
+#youdaoGWZS_hover-tips .other-vendor-wrapper .other-vendor-content .youdaoGWZS_hoverHistory_lowest {
+    color: #666;
+    font-size: 12px;
+}
+#youdaoGWZS_hover-tips .other-vendor-wrapper .other-vendor-content .youdaoGWZS_hoverHistory_lowest:hover {
+    text-decoration: underline;
+    color: #c03;
+}
+#youdaoGWZS_hover-tips .other-vendor-wrapper .other-vendor-content .see-other-vendor {
+    color: #666;
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    right: 12px;
+    text-indent: 15px;
+    width: 73px;
+    line-height: 24px;
+    height: 22px;
+    background-position: -680px -160px;
+    background-image: url('./../images/hoverHistory.png');
+}
+#youdaoGWZS_hover-tips .other-vendor-wrapper .other-vendor-content .see-other-vendor:hover {
+    background-position: -760px -160px;
+}
+.youdaoGWZS_hover-tips .see-guide i {
+    background-position: -480px -540px;
+}
+.youdaoGWZS_hover-tipsguide .see-guide i {
+    background-position: -480px -540px;
+}
+.youdaoGWZS_hover-tipsdiscount .see-guide i {
+    background-position: -480px -520px;
+}

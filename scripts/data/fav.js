@@ -15,24 +15,14 @@ define(function (require, exports, module) {
         }
     });
 
-    data.getData = function (pageConf, callback) {
-        var offset, limites;
-        if ('number' === typeof pageConf.counts) {
-            offset = (pageConf.page -  1) * 20 + pageConf.counts;
-        } else {
-            offset = (pageConf.page -  1) * 20;
-        }
-
-        if ('object' === typeof pageConf.filter) {
-            limites = 20;
-        } else {
-            limites = 5;
-        }
+    data.getData = function (param, callback) {
+        var start = (param.page -  1) * 20;
+        var offset = param.counts ? start + param.counts : start;
+        var limites = 'object' === typeof param.filter ? 20 : 5;
         data.fetch(offset, limites, function (json) {
-
-            if ('object' === typeof pageConf.filter) {
+            if ('object' === typeof param.filter) {
                 var total = json.total;
-                json = _.where(json, pageConf.filter);
+                json = _.where(json, param.filter);
                 json.total = total;
                 callback(json);
             } else {

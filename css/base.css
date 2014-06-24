@@ -13,6 +13,17 @@
 }
 
 /**
+ * 修改目标价格弹窗
+ */
+#modifyExpectPrice{
+    margin-top: 10px;
+}
+#modifyExpectPrice .error{
+    display:none;
+}
+
+
+/**
  * 正在加载
  */
 .loading .loading-tip {
@@ -35,6 +46,7 @@
     line-height: 30px;
     text-align: center;
     margin: 30px 0;
+    display: none;
 }
 /*猜你喜欢*/
  .no-recommands {
@@ -190,7 +202,7 @@
     padding-left: 10px;
     color: #333;
 }
-.pop-out .pop-out-hd .pop-out-close {
+.pop-out .pop-out-hd .close {
     position: absolute;
     top: 13px;
     right: 10px;
@@ -225,10 +237,10 @@
     line-height: 30px;
     cursor: pointer;
 }
-.pop-out .pop-out-bd .pop-out-btns .pop-out-btn-cancel {
+.pop-out .pop-out-bd .pop-out-btns .cancel {
     display: none;
 }
-.pop-out .pop-out-bd .pop-out-btns.has-cancel .pop-out-btn-cancel {
+.pop-out .pop-out-bd .pop-out-btns.has-cancel .cancel {
     display: inline-block;
 }
 .pop-out .pop-out-ft {

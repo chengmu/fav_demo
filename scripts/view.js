@@ -3,6 +3,8 @@ define(function (require, exports, module) {
     var utils = require('./utils');
     var Paging = require('./paging');
 
+    var BOTTOM_MARGIN = 200;
+
     var View = Backbone.View.extend({
 
         tagName: 'div',
@@ -18,8 +20,8 @@ define(function (require, exports, module) {
             this.router = router;
             this.paging = new Paging(router);
             console.log('view init finish.', this.getKey());
-             _.bindAll(this, 'append');
-            $(window).scroll(this.append);
+             _.bindAll(this, '_checkIfReachBottom');
+            $(window).scroll(this._checkIfReachBottom);
 
         },
 
@@ -47,7 +49,7 @@ define(function (require, exports, module) {
             this._showLoading();
             this.ds.getData({
                 page: page,
-                filter : self._inFilterMode ? self.filter : null
+                filter : self._inFilterMode ? self.filter : undefined
             }, function (json) {
                 self.paging.render(json.total, page);
                 self._clearList();
@@ -60,9 +62,14 @@ define(function (require, exports, module) {
             return this;
         },
 
-        _counts : 0,
-        _dontLoad : true,
-        _inAppending : false,
+        _checkIfReachBottom : function () {
+            if (($(window).height() + $(window).scrollTop()) + BOTTOM_MARGIN < $(document).height()) return;
+            this.append();
+        },
+
+        _counts : 0, // 当前页目前已经加载的数目
+        _dontLoad : true, // 是否不再触发append；如果是过滤模式的话，不需要再触发
+        _inAppending : false, // 是否正在加载更多；避免多次触发
         append : function () {
             if (this._dontLoad || this._counts >= 20 || this._inAppending) return;
             this._inAppending = true;
@@ -79,6 +86,7 @@ define(function (require, exports, module) {
             });
         },
 
+        _listCache: [],
         renderList: function (json, view) {
             var self = this;
             var list = this.$el.find('div.results div.bd ul');
@@ -90,7 +98,6 @@ define(function (require, exports, module) {
             self._counts = self._counts + 5;
         },
 
-        _listCache: [],
 
         _clearList: function () {
             _.each(this._listCache, function (view) {

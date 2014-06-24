@@ -1,0 +1,16 @@
+ <div class="pop-out">
+    <div class="pop-out-hd">
+        <div class="pop-out-line"></div>
+        <div class="pop-out-title"><%=title%></div>
+        <span class="close">X</span>
+    </div>
+    <div class="pop-out-bd">
+        <div class="pop-out-contents">
+            <%=content%>
+        </div>
+        <div class="pop-out-btns  <%= (this.hasCancel ? 'has-cancel' : '') %>">
+            <span class="confirm">确&nbsp;定</span>
+            <span class="cancel">取&nbsp;消</span>
+        </div>
+    </div>
+</div>
