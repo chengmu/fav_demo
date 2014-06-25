@@ -94,22 +94,18 @@ define(function (require, exports, module) {
         },
 
         cancelHandle : function () {
-            this.remove();
-            var handle = this.opts.cancelHandle;
-            $.isFunction(handle) && handle();
+            var handle = this.opts.cancelHandle && _.bind(this.opts.cancelHandle, this);
+            $.isFunction(handle) ? handle() && this.remove() : this.remove();
         },
 
         closeHandle : function () {
-            this.remove();
-            var handle = this.opts.closeHandle;
-            $.isFunction(handle) && handle();
+            var handle = this.opts.closeHandle && _.bind(this.opts.closeHandle, this);
+            $.isFunction(handle) ? handle() && this.remove() : this.remove();
         },
 
         confirmHandle : function () {
-            this.remove();
-            var handle = this.opts.confirmHandle;
-            $.isFunction(handle) && handle();
-
+            var handle = this.opts.confirmHandle && _.bind(this.opts.confirmHandle, this);
+            $.isFunction(handle) ? handle() && this.remove() : this.remove();
         }
 
     });

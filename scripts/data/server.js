@@ -8,6 +8,7 @@ define(function (require, exports, module) {
     'use strict';
 
     var md5 = require('../code').md5;
+    var combParams = require('../utils.js').combParams;
 
     var defaultOptions = {
         // ?start=0&length=10
@@ -24,23 +25,9 @@ define(function (require, exports, module) {
 
     var Server = function (ops) {
         ops = ops || {};
-        this.ops = _.extend(ops, defaultOptions);
+        this.ops = _.extend(defaultOptions, ops);
         this.initialize.apply(this, arguments);
         return this;
-    };
-
-    /**
-     * 合并参数
-     */
-    var combParams = function (base, api, params) {
-        var url = '';
-        url = base + api + '?';
-        for (var key in params) {
-            if (params.hasOwnProperty(key)) {
-                url += key + '=' + params[key] + '&';
-            }
-        }
-        return url.slice(0, url.length - 1);
     };
 
     _.extend(Server.prototype, Backbone.Events, {
@@ -55,16 +42,17 @@ define(function (require, exports, module) {
                 success : function (data) {
                     return $.isFunction(callback) ? callback(data) : null ;
                 },
-                error : function (err) {
-                    return $.isFunction(callback) ? callback(err) : null ;
-
+                error : function () {
+                    var data = {};
+                    data.error = true;
+                    return $.isFunction(callback) ? callback(data) : null ;
                 }
             });
         },
 
         _filter : function (rawData) {
             var me = this;
-            var data = rawData.list;
+            var data = rawData.list || [];
             if ($.isFunction(me.ops.filter)) {
                 data = me.ops.filter(data);
             }
@@ -90,6 +78,7 @@ define(function (require, exports, module) {
                 var result = me._filter(data);
                 result[1].offset = offset;
                 result[1].limits = limits;
+                result[1].error = data.error || false;
                 return $.isFunction(callback) ? callback.apply(me, result) : null ;
             });
         },

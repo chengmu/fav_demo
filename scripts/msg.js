@@ -1,11 +1,11 @@
 define(function (require, exports, module) {
 
-    var template = require('../templates/view2.html');
+    var template = require('../templates/msg.html');
     var View = require('./view');
-    var View2Item = require('./view2-item');
-    var ds1 = require('./data-source-1');
+    var MsgItem = require('./msg-item');
+    var ds = require('./data/msg.js');
 
-    var View2 = View.extend({
+    var Msg = View.extend({
 
         // 本 view 的名称，可以理解为 first name 和 last name
         // first name : <div tab-wraper data-name="{first_name}">
@@ -14,13 +14,13 @@ define(function (require, exports, module) {
 
         template: _.template(template),
 
-        ds: ds1,
+        ds: ds,
 
-        ViewItem: View2Item,
+        ViewItem: MsgItem,
 
         events: {}
 
     });
 
-    return View2;
+    return Msg;
 });

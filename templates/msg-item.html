@@ -1,0 +1,23 @@
+<div class="item-hd">
+    <p>你收藏的商品降价了！
+        <%if (item.isNew) {%>
+        <span class="new">new</span>
+        <%}%>
+    </p>
+</div>
+<div class="item-detail">
+    <a href="<%=item.cpsUrl%>" target="_blank" class="item-img"  clkAction="FAVOR_ITEM_COLLECT_CLICK" data-position="IMG">
+        <%if (item.img !== undefined) {%>
+            <img src="<%=item.img%>" alt="<%=item.title%>">
+        <%}%>
+    </a>
+    <div class="item-content">
+        <a href="<%=item.cpsUrl%>" clkAction="FAVOR_ITEM_COLLECT_CLICK" data-position="TITLE" target="_blank" class="title"><%=item.title%></a>
+    </div>
+    <div class="item-msg">
+        <p>- <%=item.timestamp%> 【<%=item.domainName%>】价格下降<%=item.lowerprice%><%=item.priceunit%>, 现价格<%=item.curPrice%>, 达到目标价格<%=item.expectPrice%></p>
+    </div>
+    <div class="item-ops">
+        <a class="setting icon icon-setting" href="javascript:;" clkAction="" title="修改降价提醒目标价"></a>
+    </div>
+</div>

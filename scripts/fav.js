@@ -5,7 +5,7 @@ define(function (require, exports, module) {
     var favItem = require('./fav-item');
     var data = require('./data/fav');
 
-    var View1 = View.extend({
+    var fav = View.extend({
 
         // 本 view 的名称，可以理解为 first name 和 last name
         // first name : <div tab-wraper data-name="{first_name}">
@@ -30,6 +30,7 @@ define(function (require, exports, module) {
             inSalesPromotion : true,
             avaliable : true
         },
+
         goFilter : function (e) {
             if (e.target.checked) {
                 this._inFilterMode = true;
@@ -68,5 +69,5 @@ define(function (require, exports, module) {
         }
 
     });
-    return View1;
+    return fav;
 });

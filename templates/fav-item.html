@@ -1,5 +1,5 @@
     <%var avaliableFlag = item && item.avaliable;%>
-    <div data-url="<%=item.url%>" class="<%=avaliableFlag ? '' : 'not-avalible'%>" >
+    <div class="<%=avaliableFlag ? '' : 'not-avalible'%>" >
         <div class="item-detail">
             <a href="<%=item.cpsUrl%>" target="_blank" class="item-img"  clkAction="FAVOR_ITEM_COLLECT_CLICK" data-position="IMG">
                 <%if (item.img !== undefined) {%>

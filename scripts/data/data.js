@@ -23,7 +23,7 @@ define(function (require, exports, module) {
         this.opt = _.extend(defaultOptions, options);
         this.list = [];
         this.opt.server = this.opt.server || {};
-        this.server = new Server(this.opt.sever);
+        this.server = new Server(this.opt.server);
         this.initialize.apply(this, arguments);
         return this;
     };
@@ -61,14 +61,17 @@ define(function (require, exports, module) {
             var me = this;
             var data = me.list.slice(offset, limits + offset);
             if (me._check(data)) {
+                // 本地数据完整
                 data.total = me.info.size;
                 return $.isFunction(callback) ? callback(data) : null ;
             } else {
+                // 本地数据不完整 需发请求
                 if (me.info) {
                     offset = offset > me.info.size ? me.info.size : offset;
                 }
                 me.server.fetch(offset, limits, function (data, info) {
                     me.update(data, info, function (json, info) {
+                        _.extend(data, info);
                         json.total = info.size;
                         return $.isFunction(callback) ? callback(data) : null ;
                     });

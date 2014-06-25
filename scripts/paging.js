@@ -3,8 +3,6 @@ define(function (require, exports, module) {
     var utils = require('./utils');
     var DOT_SPACE = '...';
 
-    window.paging = utils.paging;
-
     var PagingView = Backbone.View.extend({
 
         events: {

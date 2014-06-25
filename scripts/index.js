@@ -70,7 +70,7 @@ define(function (require, exports, module) {
     window.tab=tabs;
     // mount views
     var View1 = require('./fav.js');
-    var View2 = require('./view2');
+    var View2 = require('./msg.js');
     router.mountView(new View1(router, tabs));
     router.mountView(new View2(router, tabs));
 
@@ -84,7 +84,7 @@ define(function (require, exports, module) {
 
     require('./hoverHistory.js');
 
-    require('./depriceReminder.js');
+    require('./data/msg.js');
 
 });
 

@@ -11,6 +11,10 @@ define(function (require, exports, module) {
 
         className: 'results-wraper',
 
+        events : {
+            'click .retry' : 'retry'
+        },
+
         getKey: function () {
             return utils.getKey(this.iname[0], this.iname[1]);
         },
@@ -22,7 +26,6 @@ define(function (require, exports, module) {
             console.log('view init finish.', this.getKey());
              _.bindAll(this, '_checkIfReachBottom');
             $(window).scroll(this._checkIfReachBottom);
-
         },
 
         // 把当前 view 插入到页面中。第一次调用 view.render 时运行
@@ -89,6 +92,12 @@ define(function (require, exports, module) {
         _listCache: [],
         renderList: function (json, view) {
             var self = this;
+            if (json.error) {
+                this._hideLoading();
+                this._showOffline();
+                this._dontLoad = true;
+                return;
+            }
             var list = this.$el.find('div.results div.bd ul');
             _.each(json, function (model) {
                 var item = new view({ds : self.ds, model : model});
@@ -98,6 +107,14 @@ define(function (require, exports, module) {
             self._counts = self._counts + 5;
         },
 
+        retry : function () {
+            this._hideOffline();
+            if (this._counts === 0) {
+                this.render();
+            } else {
+                this.append();
+            }
+        },
 
         _clearList: function () {
             _.each(this._listCache, function (view) {
@@ -106,12 +123,28 @@ define(function (require, exports, module) {
         },
 
         _showLoading: function () {
-            this.$el.find('div.results div.ft').show();
+            this.$el.find('div.results div.ft div.loading').show();
         },
 
         _hideLoading: function () {
-            this.$el.find('div.results div.ft').hide();
+            this.$el.find('div.results div.ft div.loading').hide();
         },
+
+        _showOffline: function () {
+            this.$el.find('div.results div.ft div.offline').show();
+        },
+
+        _hideOffline: function () {
+            this.$el.find('div.results div.ft div.offline').hide();
+        },
+
+        _showEmpty : function () {
+            this.$el.find('div.results div.ft div.empty').show();
+        },
+
+        _hideEmpty : function () {
+            this.$el.find('div.results div.ft div.empty').hide();
+        }
     });
 
     return View;

@@ -1,6 +1,20 @@
 define(function (require, exports, module) {
     var utils = {};
 
+    /**
+     * 合并参数
+     */
+    utils.combParams = function (base, api, params) {
+        var url = '';
+        url = base + api + '?';
+        for (var key in params) {
+            if (params.hasOwnProperty(key)) {
+                url += key + '=' + params[key] + '&';
+            }
+        }
+        return url.slice(0, url.length - 1);
+    };
+
     utils.getKey = function (tab, nav) {
         return tab + '_' + nav;
     };
