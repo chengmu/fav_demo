@@ -3,7 +3,6 @@ define(function (require, exports, module) {
     var template = require('../templates/fav.html');
     var View = require('./view');
     var favItem = require('./fav-item');
-    var data = require('./data/fav');
 
     var fav = View.extend({
 
@@ -14,7 +13,7 @@ define(function (require, exports, module) {
 
         template: _.template(template),
 
-        ds: data,
+        ds: require('./data/fav.js'),
 
         ViewItem: favItem,
 

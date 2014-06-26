@@ -1,0 +1,656 @@
+html {
+  color: #000;
+  background: #FFF;
+}
+
+body,
+div,
+h2,
+form,
+input,
+p,ul,li {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+input {
+  *font-size: 100%;
+}
+
+li {
+    list-style:none
+}
+html {
+  overflow-y: scroll;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #fea245;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+::-moz-selection {
+  background-color: #fea245;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+
+body {
+  font-size: 12px;
+  line-height: 1.75em;
+  font-family: Arial, Verdana, "\5FAE\8F6F\96C5\9ED1";
+  _font-family: "\5B8B\4F53";
+  color: #333;
+}
+
+.simsun {
+  font-family: "\5B8B\4F53";
+}
+
+a {
+  color: #fd8104;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fd8104;
+  text-decoration: underline;
+}
+
+.clearfix:after {
+  content: '.';
+  display: block;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.h-btn .bgl,
+.h-btn .bgr {
+  background: transparent;
+  background-image: url(http://shared.ydstatic.com/fanxian/4.3.19/images/image/h_btn.png);
+  background-repeat: no-repeat;
+}
+
+.h-btn {
+  display: inline-block;
+  vertical-align: middle;
+  height: 35px;
+  padding-right: 1px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.h-btn:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.h-btn .bgl {
+  display: inline-block;
+  color: #fff;
+  vertical-align: top;
+  height: 35px;
+  padding-left: 1px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.h-btn .bgr {
+  display: inline-block;
+  position: relative;
+  right: -1px;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 35px;
+  color: #fff;
+  height: 35px;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 0 22px;
+}
+
+.h-btn .bgri {
+  top: 0;
+  line-height: 20px;
+  vertical-align: top;
+  border: 0;
+  padding: 0 22px;
+  *padding: 0 10px;
+}
+
+.h-btni01 .bgl {
+  background-position: 0 0;
+}
+
+.h-btni01 .bgr {
+  background-position: right 0;
+}
+
+.h-btni01:hover .bgl {
+  background-position: 0 -50px;
+}
+
+.h-btni01:hover .bgr {
+  background-position: right -50px;
+}
+
+/*\*/
+
+/**/
+
+@media screen and (max-width:640px) {
+  body {
+    background: #ccc;
+  }
+}
+
+input {
+  vertical-align: middle;
+  padding: 5px;
+  resize: none;
+}
+
+.h-input {
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-top-color: #c0c0c0;
+  -moz-box-shadow: 1px 1px #eee inset;
+  -webkit-box-shadow: 1px 1px #eee inset;
+  box-shadow: 1px 1px #eee inset;
+}
+
+.h-hd {
+  background-image: url(http://shared.ydstatic.com/fanxian/4.3.19/images/image/h_hd.png);
+  background-repeat: no-repeat;
+}
+
+.h-hd20 {
+  background-position: 0 -330px;
+}
+
+.h-hd21 {
+  background-position: -150px -330px;
+}
+
+.css-module-dialog {
+  background-color: #fff;
+  border: 4px solid #d6d6d6;
+}
+
+.css-module-dialog .hd {
+  height: 35px;
+  overflow: hidden;
+}
+
+.css-module-dialog .hd h2 {
+  float: left;
+  _display: inline;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 8px 0 0 20px;
+}
+
+.css-module-dialog .hd .close {
+  float: right;
+  _display: inline;
+  white-space: nowrap;
+}
+
+.css-module-dialog a.close-btn {
+  display: inline-block;
+  color: #999;
+  line-height: 25px;
+  vertical-align: top;
+  padding: 0 3px 0 8px;
+  margin-left: 5px;
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+
+.css-module-dialog a.close-btn:hover {
+  background-color: #d6d6d6;
+  text-decoration: none;
+}
+
+.css-module-dialog a.close-btn b {
+  display: inline-block;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+.css-module-dialog a.close-btn span {
+  display: inline-block;
+  font-size: 18px;
+  font-family: "\5B8B\4F53";
+  color: #999;
+  vertical-align: middle;
+  margin-left: 3px;
+}
+
+#loginDailog {
+  width: 630px;
+  padding: 0 0 20px;
+}
+
+#loginDailog .hd {
+  height: 35px;
+}
+
+#loginDailog .tip-hd {
+  position: relative;
+  height: 80px;
+}
+#loginDailog .tip-hd .tip{
+  position: absolute;
+}
+
+#loginDailog .oauth-login-ctn {
+  float: left;
+  width: 350px;
+  margin-left: -1px;
+  border-left: 1px solid #f0f0f0;
+}
+
+#loginDailog .oauth-login-cooperation {
+  float: left;
+  _display: inline;
+  width: 278px;
+  border-right: 1px solid #f0f0f0;
+}
+
+#loginDailog .form-title {
+  display: inline-block;
+  width: 85px;
+  text-align: right;
+}
+
+#loginDailog .bd {
+  padding-top: 0;
+  width: auto;
+}
+
+#loginDailog .oauth-container {
+  padding: 2px 0 0 30px;
+}
+
+#loginDailog .login-state,
+#loginDailog .row-login-btn {
+  margin-left: 101px;
+  padding: 5px 0;
+}
+
+#loginDailog .oauth-container h2 {
+  color: #666;
+  margin: 8px 0 0 28px;
+}
+
+#loginDailog .oauth-container .h-hd {
+  margin-top: 20px;
+}
+
+#loginDailog .oauth-container .h-hd21 {
+  margin-bottom: 30px;
+}
+
+#loginDailog .oauth-login-ctn .hd h2 {
+  font-size: 12px;
+  font-weight: normal;
+  padding-left: 15px;
+  color: #666;
+}
+
+.login-container .row {
+  padding: 10px 0;
+}
+
+.login-container .row .h-input {
+  width: 210px;
+  padding: 8px 5px;
+}
+
+.login-container .login-state,
+.login-container .row-login-btn {
+  margin: 5px 0 0 98px;
+}
+
+.login-container .login-tip,
+.login-container .login-tip-psw {
+  position: relative;
+  z-index: 2;
+  zoom: 1;
+}
+
+.login-container .login-tiparea,
+.login-container .remember_psw1 {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  font-size: 12px;
+  line-height: 18px;
+  color: #555;
+  width: 213px;
+  padding: 3px 7px;
+  border: 1px solid #f9c3c3;
+  background-color: #fae4e4;
+}
+
+.login-container .login-tiparea {
+  left: 88px;
+  top: -108px;
+}
+
+.login-container .remember_psw1 {
+  top: 35px;
+  left: -41px;
+  width: 194px;
+  padding: 5px 20px 5px 7px;
+}
+
+.login-container .login-tiparea .error-state {
+  padding: 7px 0 5px 20px;
+  background: 0;
+}
+
+.login-container .login-tiparea .p-desc {
+  color: #2b2b2b;
+  padding: 5px 0 2px;
+}
+
+.login-container .login-tiparea .p-desc2 {
+  color: #ba2636;
+  padding-left: 19px;
+}
+
+.login-container .login-tiparea-close {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  font-size: 13px;
+  color: #999;
+  width: 14px;
+  height: 14px;
+  text-indent: 0;
+  background: 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.login-container .login-tiparea-close:hover {
+  background-position: -10px -2030px;
+}
+
+.login-container .icotips,
+.login-container .icotips-in {
+  position: absolute;
+  top: -14px;
+  left: 39px;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+  border: 7px dashed transparent;
+  border-bottom: 7px solid #f9c3c3;
+  overflow: hidden;
+}
+
+.login-container .icotips-in {
+  top: -13px;
+  border-bottom: 7px solid #fae4e4;
+}
+
+.login-container .icotips-b,
+.login-container .icotips-in-b {
+  position: absolute;
+  top: 104px;
+  left: 48px;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+  border: 7px dashed transparent;
+  border-top: 7px solid #f9c3c3;
+  overflow: hidden;
+}
+
+.login-container .icotips-in-b {
+  top: 102px;
+  border-top: 8px solid #fae4e4;
+}
+
+.login-container .remember_psw1 p {
+  margin: 3px 0;
+}
+
+.login-container .sp {
+  color: #e5e5e5;
+  margin: 0 10px;
+}
+
+.login-container .account_suggest_ctn {
+    display:none;
+    position:absolute;
+    z-index:2;
+    left:0;
+    top:0;
+    background-color:#fff;
+    border:1px solid #ddd;
+    overflow:hidden
+}
+.login-container .account_suggest_ctn li {
+    cursor:default;
+    font-size:12px;
+    height:18px;
+    line-height:18px;
+    padding:0 5px
+}
+.login-container .account_suggest_ctn li.title {
+    background-color:#f6f6f6;
+    color:#2b2b2b
+}
+.login-container .account_suggest_ctn li.on {
+    background-color:#d5f1ff
+}
+
+.mod-oauth-login {
+  padding: 30px 20px 20px;
+}
+
+.mod-oauth-login .oauth-login-ctn {
+  float: left;
+  width: 560px;
+  height: 100%;
+  border: 0;
+  border-left: 1px solid #fff;
+}
+
+.mod-oauth-login .oauth-login-cooperation {
+  float: left;
+  width: 330px;
+  height: 100%;
+  border: 0;
+  border-right: 1px solid #dfdfdf;
+}
+
+.mod-oauth-login .hd,
+.mod-oauth-login .bd {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+}
+
+.oauth-container {
+  padding: 2px 0 0 60px;
+}
+
+.oauth-container .hd {
+  border: 0;
+}
+
+.oauth-container .hd h2 {
+  font-size: 12px;
+  font-weight: normal;
+  background-position: 0 -160px;
+}
+
+.oauth-dialog .oauth-container .hd h2 {
+  background: 0;
+}
+
+.oauth-container .hd h2 b {
+  color: #f48e12;
+  font-weight: normal;
+}
+
+.oauth-container .bd {
+  border: 0;
+  padding: 1px 0 0 25px;
+  zoom: 1;
+}
+
+.oauth-container .h-hd {
+  display: block;
+  margin-top: 30px;
+  height: 0;
+  width: 139px;
+  padding-top: 29px;
+  overflow: hidden;
+}
+
+.oauth-container .h-hd20:hover {
+  background-position: 0 -370px;
+}
+
+.oauth-container .h-hd21:hover {
+  background-position: -150px -370px;
+}
+
+.oauth-container .h-hd21 {
+  margin-bottom: 40px;
+}
+
+.oauth-container .other-logo {
+  display: inline-block;
+  width: 85px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.oauth-container .other-logo .login-ico {
+  margin-right: 5px;
+}
+
+.login-ico {
+  background-image: url(http://shared.ydstatic.com/fanxian/4.3.19/images/image/login_ico.png);
+  background-repeat: no-repeat;
+}
+
+.login-ico5,
+.login-ico6,
+.login-ico7,
+.login-ico8 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+}
+
+.login-ico5 {
+  background-position: -80px 0;
+}
+
+.login-ico6 {
+  background-position: -100px 0;
+}
+
+.login-ico7 {
+  background-position: -120px 0;
+}
+
+.login-ico8 {
+  background-position: -140px 0;
+}
+
+
+#tip{
+
+}
+#tip .success{
+      padding: 28px 0 0 0;
+
+}
+#tip .success h4{
+    margin: 0 0 10px 90px;
+
+    font-size: 16px;
+    color: #333;
+}
+#tip .success p{
+  color: #FF6600;
+  font-weight: bold;
+  line-height: 20px;
+  margin: 0 0 0 88px;
+  font-size: 13px;
+}
+#tip .success .icon-success{
+    outline: 1px solid #000;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 30px;
+    left: 42px;
+    background-position: -30px -100px;
+}
+#tip .fail{
+    padding: 28px 0 0 0;
+
+}
+#tip .fail .icon-mark{
+    outline: 1px solid #000;
+    height: 31px;
+    width: 31px;
+    position: absolute;
+    top: 30px;
+    left: 42px;
+    background-position: -1px -123px;
+}
+#tip .fail p{
+  color: #FF6600;
+  font-weight: bold;
+  line-height: 20px;
+  margin: 0 0 0 88px;
+  font-size: 13px;
+}
+#tip .login_tip{
+  color: #FF6600;
+  font-weight: bold;
+  line-height: 110px;
+  margin: 0 0 0 48px;
+  font-size: 13px;
+}

@@ -1,7 +1,24 @@
 define(function (require, exports, module) {
 
     var Data = require('./data.js');
+
+    var serverOpt = {
+        // ?start=0&length=10
+        BASE_URL : 'http://zhushou.huihui.cn/api/myzhushou/collection/',
+        GET_API : 'list',
+        DEL_API : 'delurls',
+        keys : ['login', 'jifenUrl', 'used'],
+
+        filter : function (data) {
+            // 数据处理
+            return data;
+        }
+    };
+
     var data = new Data({
+
+        server : serverOpt,
+
         preprocessor : function (raw) {
             _.each(raw, function(item) {
                 if (item.lastSecondPrice !== -1 && item.lastSecondPrice - item.curPrice > 0) {

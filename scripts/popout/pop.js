@@ -85,7 +85,7 @@ define(function (require, exports, module) {
 
         carriageHandle : function (e) {
             if (e.keyCode !== 13) return;
-            me.$box.find('.confirm').click();
+            this.$el.find('.confirm').click();
         },
 
         remove : function () {

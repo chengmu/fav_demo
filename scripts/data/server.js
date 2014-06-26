@@ -24,8 +24,10 @@ define(function (require, exports, module) {
     };
 
     var Server = function (ops) {
-        ops = ops || {};
-        this.ops = _.extend(defaultOptions, ops);
+        ops = ops || defaultOptions;
+        // debugger;
+        // this.ops = _.extend(ops, defaultOptions);
+        this.ops = ops;
         this.initialize.apply(this, arguments);
         return this;
     };

@@ -1,0 +1,97 @@
+<div id="loginDailog" class="mod-dailog mod-fx login-box mod-oauth-login css-module-dialog">
+    <div class="hd tip-hd clearfix">
+        <div class="close"> <a href="javascript:void(0);" class="close-box fancybox-close close-btn js-log" data-log="page=p-huihui-index&amp;type=close"><b>关闭</b><span>×</span></a>
+        </div>
+        <div id="tip">
+        <%if (local.addFave) {%>
+            <%if (local.success) {%>
+            <div class="success">
+                <span class="icon icon-success"></span>
+                <h4>成功加入收藏夹！</h4>
+                <p>未登录会有收藏商品丢失的风险。登录永久保存，享受多平台同步、手机降价提醒等功能！</p>
+            </div>
+            <%} else {%>
+            <div class="fail">
+                <span class="icon icon-mark"></span>
+                <p>未登录只能收藏<%= local.maxAmount%>件商品，您已达到上限！继续收藏无法添加到收藏夹。</p>
+                <p>登录后无数量限制。</p>
+            </div>
+            <%}%>
+        <%} else {%>
+        <p class='login_tip'>未登录会有收藏商品丢失的风险。登录永久保存，享受多平台同步、手机降价提醒等功能！</p>
+        <%}%>
+
+        </div>
+    </div>
+    <div class="hd clearfix">
+        <h2>我要登录</h2>
+    </div>
+    <div class="bd clearfix">
+        <div class="oauth-login-cooperation oauth-dialog">
+            <div class="oauth-container">
+                <div class="hd">
+                    <h2>使用合作帐号登录<b>(推荐)</b>
+                    </h2>
+                </div>
+                <div class="bd">
+                    <a href="http://huihui.cn/login/oauth/qq?url=<%=local.targetUrl%>" class="h-hd h-hd20" title="QQ" data-log="login_qq">QQ帐号登录</a>
+                    <a href="http://huihui.cn/login/oauth/tsina?url=<%=local.targetUrl%>" class="h-hd h-hd21" title="新浪微博" data-log="login_tsina">新浪微博</a>
+                    <a href="http://huihui.cn/login/oauth/taobao?url=<%=local.targetUrl%>" title="淘宝网" class="other-logo" data-log="login_taobao">
+                        <span class="login-ico login-ico5"></span>淘宝网</a>
+                    <a href="http://huihui.cn/login/oauth/alipay?url=<%=local.targetUrl%>" title="支付宝" class="other-logo" data-log="login_alipay">
+                        <span class="login-ico login-ico6"></span>支付宝</a>
+                    <a href="http://huihui.cn/login/oauth/renren?url=<%=local.targetUrl%>" title="人人网" class="other-logo" data-log="login_renren">
+                        <span class="login-ico login-ico7"></span>人人网</a>
+                    <a href="http://huihui.cn/login/oauth/kaixin?url=<%=local.targetUrl%>" title="开心网" class="other-logo" data-log="login_kaixin">
+                        <span class="login-ico login-ico8"></span>开心网</a>
+                </div>
+            </div>
+        </div>
+        <div class="oauth-login-ctn">
+            <div class="hd">
+                <h2>使用网易通行证登录</h2>
+            </div>
+            <div class="login-container">
+                <form action="https://reg.163.com/logins.jsp" method="post">
+                    <input type="hidden" value="http://www.huihui.cn/activate?url=<%=local.targetUrl%>" name="url">
+                    <input type="hidden" value="huihui" name="product">
+                    <input type="hidden" value="1" name="type">
+                    <input type="hidden" value="huihui.cn" name="domains">
+                    <div class="row login-tip" style="z-index: 100;">
+                        <label class="form-title">用户名：</label>
+                        <input type="text" id="username" name="username" autocomplete="off" class="h-input def-feild" value="163，126邮箱可直接登录" def-data="163，126邮箱可直接登录">
+                        <div id="loginTiparea" class="login-tiparea">
+                            <p class="error-state">登录名或密码错误</p>
+                            <p class="p-desc">1、通行证请输入邮箱全称</p>
+                            <p class="p-desc2">如：name@example.com</p>
+                            <p class="p-desc">2、请检查邮箱地址及密码是否正确填写</p> <a href="javascript:void(0)" title="关闭" class="login-tiparea-close simsun">×</a>
+                            <span class="icotips-b"></span>
+                            <span class="icotips-in-b"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="form-title">密&nbsp;码：</label>
+                        <input type="password" class="h-input" id="password" name="password">
+                    </div>
+                    <div class="row login-state login-tip-psw">
+                        <input type="checkbox" value="1" name="savelogin" id="savelogin" class="js-log" data-log="page=p-huihui-index&amp;type=login_auto_login&amp;abtest=" checked="">
+                        <label for="savelogin" class="js-log" data-log="page=p-huihui-index&amp;type=login_auto_login&amp;abtest=">记住我的登录状态</label>
+                        <span class="sp">|</span> <a href="http://reg.163.com/RecoverPassword.shtml" target="_blank" class="js-log" data-log="page=p-huihui-index&amp;type=forget_password&amp;abtest=">忘记密码？</a>
+                        <div id="rememberPsw" class="remember_psw1">
+                            <span class="icotips"></span>
+                            <span class="icotips-in"></span> <a title="关闭" href="javascript:void(0)" class="login-tiparea-close simsun">×</a>
+                            <p>为了您的信息安全，请不要在网吧或公用电脑上使用此功能！</p>
+                        </div>
+                    </div>
+                    <div class="row row-login-btn">
+                        <span class="h-btn h-btni01">
+                            <span class="bgl">
+                                <input type="submit" value="&nbsp;&nbsp;登 录&nbsp;&nbsp;" hidefocus="true" class="bgr bgri  js-log" data-log="page=p-huihui-index&amp;type=login&amp;abtest=">
+                            </span>
+                        </span> <a href="http://huihui.cn/register2" class="js-log" data-log="page=p-huihui-index&amp;type=fast_signup&amp;abtest=" target="_blank">快速注册&gt;&gt;</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -20,7 +20,7 @@ define(function (require, exports, module) {
 
     var Data = function (options) {
         options = options || {};
-        this.opt = _.extend(defaultOptions, options);
+        this.opt = _.extend(options, defaultOptions);
         this.list = [];
         this.opt.server = this.opt.server || {};
         this.server = new Server(this.opt.server);
@@ -38,7 +38,6 @@ define(function (require, exports, module) {
                 me.info = {};
                 _.extend(me.info, info);
                 me.update(data, info, function (data) {
-                    console.log('初始数据就绪');
                 });
             });
         },

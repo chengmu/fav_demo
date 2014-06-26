@@ -6,6 +6,21 @@ define(function (require, exports, module) {
     var utils = require('./utils');
     var tabs = require('./jnx-tabs');
     // -------------------------------------------------------------------------
+    //
+
+    window.youdao = {
+        isAddSuc : false,
+        success : false,
+        login : false
+    };
+
+    var loginInit = require('./login/index.js');
+    loginInit();
+
+    $('#login').on('click', function () {
+        loginInit();
+    });
+
     var Router = Backbone.Router.extend({
         routes: {
             ":tab/:nav/:page": "redirect"
@@ -87,6 +102,5 @@ define(function (require, exports, module) {
     require('./data/msg.js');
 
 });
-
 
 

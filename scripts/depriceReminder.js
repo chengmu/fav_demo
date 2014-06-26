@@ -2,6 +2,8 @@ define(function (require, exports, module) {
     'use strict';
     var code = require('./code.js');
     var combParams = require('./utils.js').combParams;
+    var Pop = require('./popout/pop.js');
+
     // test
     // var url = 'http://zhushou.huihui.cn/api/pricehub/additem?';
 
@@ -53,6 +55,45 @@ define(function (require, exports, module) {
             success : callback,
             fail : callback
         });
+    };
+
+
+    var num_reg = /^\d+(\.[0-9]{0,2})?$/;
+    var tmplString = [
+        '<div id="modifyExpectPrice">',
+            '<label for="expectPrice">目标价格：</label>',
+            '<input type="text" id="expectPrice" name="expectPrice" value="' + '<%=price%>' + '"/>',
+            '<p class="error">*请填写有效数值</p>',
+        '</div>'
+        ].join('');
+
+    dr.setPricePop = function (url, curPrice) {
+        dr.getExpectPrice(url, function (res) {
+                console.log('获取目标价格, url:', url, '，返回：', res);
+                var expectPrice = res.success && res.expectPrice !== '0.0' ? res.expectPrice : curPrice;
+                var content = _.template(tmplString, {
+                    price : expectPrice
+                });
+                var pop = new Pop({
+                    data : {
+                        'title' : '修改降价提醒目标价',
+                        'content' : content
+                    },
+                    confirmHandle : function () {
+                        var price = this.$el.find('input').val();
+                        if (num_reg.test(price)) {
+                            dr.setExpectPrice(url, price, function (res) {
+                                console.log('设置成功！', res);
+                            });
+                            return true;
+                        } else {
+                            this.$el.find('.error').show();
+                            return false;
+                        }
+                    }
+                });
+
+            });
     };
 
     // var testUrl = 'http://www.amazon.cn/mn/detailApp?asin=b00ecv8px2';

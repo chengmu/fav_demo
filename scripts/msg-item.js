@@ -1,8 +1,9 @@
 define(function (require, exports, module) {
 
     var template = require('../templates/msg-item.html');
+    var dr = require('./depriceReminder.js');
 
-    var View2Item = Backbone.View.extend({
+    var MsgItem = Backbone.View.extend({
 
         tagName: 'div',
 
@@ -10,7 +11,9 @@ define(function (require, exports, module) {
 
         template: _.template(template),
 
-        events: {},
+        events: {
+            'click .setting' : 'setPrice'
+        },
 
         initialize: function () {},
 
@@ -22,9 +25,13 @@ define(function (require, exports, module) {
                 item : model
             }));
             return this;
+        },
+
+        setPrice : function (e) {
+            dr.setPricePop(this.model.url, this.model.curPrice);
         }
 
     });
 
-    return View2Item;
+    return MsgItem;
 });
