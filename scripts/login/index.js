@@ -50,6 +50,9 @@
         },
         hide : function () {
             this.$el.hide();
+        },
+        remove : function () {
+            this.$el.remove();
         }
     };
 
@@ -99,11 +102,13 @@
 
         reposi : function () {
             var me = this;
-            mask.show();
-            this.$box.css({
-                'top' : ($(window).height() - me.$box.outerHeight()) / 2,
-                'left' : ($(window).width() - me.$box.outerWidth()) / 2
-            });
+            if (this.$box.length !== 0) {
+                mask.show();
+                this.$box.css({
+                    'top' : ($(window).height() - me.$box.outerHeight()) / 2,
+                    'left' : ($(window).width() - me.$box.outerWidth()) / 2
+                });
+            }
         },
 
         bindEvents : function () {
@@ -115,7 +120,7 @@
 
         close : function () {
             $('#' + this.id).remove();
-            mask.hide();
+            mask.remove();
         }
 
     };

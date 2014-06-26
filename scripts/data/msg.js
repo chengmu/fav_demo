@@ -5,7 +5,7 @@ define(function (require, exports, module) {
          // ?start=0&length=10
         BASE_URL : 'http://zhushou.huihui.cn/api/myzhushou/collection/',
         GET_API : 'messageList',
-        keys : [],
+        keys : ['allsize', 'newNum'],
 
         filter : function (data) {
             // 数据处理

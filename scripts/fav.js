@@ -30,6 +30,15 @@ define(function (require, exports, module) {
             avaliable : true
         },
 
+        init : function () {
+            var me = this;
+            this.ds.fetch(0, 5, function (res) {
+                var num = res.pricehubSize;
+                if (num === 0) return;
+                $('.pricehubSize').text(num).show();
+            });
+        },
+
         goFilter : function (e) {
             if (e.target.checked) {
                 this._inFilterMode = true;

@@ -23,9 +23,10 @@ define(function (require, exports, module) {
             this.isFirstRender = false;
             this.router = router;
             this.paging = new Paging(router);
-            console.log('view init finish.', this.getKey());
              _.bindAll(this, '_checkIfReachBottom');
             $(window).scroll(this._checkIfReachBottom);
+            $.isFunction(this.init) && this.init();
+
         },
 
         // 把当前 view 插入到页面中。第一次调用 view.render 时运行
@@ -54,6 +55,10 @@ define(function (require, exports, module) {
                 page: page,
                 filter : self._inFilterMode ? self.filter : undefined
             }, function (json) {
+                if (json.total === 0) {
+                    self._showEmpty();
+                    return;
+                }
                 self.paging.render(json.total, page);
                 self._clearList();
                 self.renderList(json, self.ViewItem);

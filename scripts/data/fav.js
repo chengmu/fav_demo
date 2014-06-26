@@ -7,7 +7,7 @@ define(function (require, exports, module) {
         BASE_URL : 'http://zhushou.huihui.cn/api/myzhushou/collection/',
         GET_API : 'list',
         DEL_API : 'delurls',
-        keys : ['login', 'jifenUrl', 'used'],
+        keys : ['login', 'jifenUrl', 'used', 'pricehubSize'],
 
         filter : function (data) {
             // 数据处理
@@ -38,7 +38,7 @@ define(function (require, exports, module) {
         var limites = 'object' === typeof param.filter ? 20 : 5;
         data.fetch(offset, limites, function (json) {
             if ('object' === typeof param.filter) {
-                var total = json.total;
+                var total = json.total || 0;
                 json = _.where(json, param.filter);
                 json.total = total;
                 callback(json);

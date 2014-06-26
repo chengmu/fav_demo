@@ -18,7 +18,19 @@ define(function (require, exports, module) {
 
         ViewItem: MsgItem,
 
-        events: {}
+        events: {},
+
+        init : function () {
+            var me = this;
+            this.ds.fetch(0, 10, function (res) {
+                me.$el.find('.msgNum').text(res.newNum);
+                if (res.newNum !== 0) {
+                    me.$el.find('.broadcast').show();
+                }
+            });
+        }
+
+
 
     });
 

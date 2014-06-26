@@ -116,10 +116,13 @@
     color: #e5e5e5;
     text-shadow: 1px 1px 1px #f6f6f6;
 }
-.navs .nav .notify-num {
-    color: #fd8712;
-    font-weight: bold;
-    letter-spacing: 2px;
+.nav .pricehubSize{
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 16px;
+    padding: 0 0 0 4px;
+    color: #fff;
+    vertical-align: 10px;
 }
 
 .go-top {

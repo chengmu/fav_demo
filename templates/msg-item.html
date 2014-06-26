@@ -6,13 +6,13 @@
     </p>
 </div>
 <div class="item-detail">
-    <a href="<%=item.cpsUrl%>" target="_blank" class="item-img"  clkAction="FAVOR_ITEM_COLLECT_CLICK" data-position="IMG">
+    <a href="<%=item.cpsurl%>" target="_blank" class="item-img"  clkAction="FAVOR_ITEM_COLLECT_CLICK" data-position="IMG">
         <%if (item.img !== undefined) {%>
             <img src="<%=item.img%>" alt="<%=item.title%>">
         <%}%>
     </a>
     <div class="item-content">
-        <a href="<%=item.cpsUrl%>" clkAction="FAVOR_ITEM_COLLECT_CLICK" data-position="TITLE" target="_blank" class="title"><%=item.title%></a>
+        <a href="<%=item.cpsurl%>" clkAction="FAVOR_ITEM_COLLECT_CLICK" data-position="TITLE" target="_blank" class="title"><%=item.title%></a>
     </div>
     <div class="item-msg">
         <p>- <%=item.timestamp%> 【<%=item.domainName%>】价格下降<%=item.depreciation%><%=item.priceunit%>, 现价格<span class="cur-price"><%=item.curPrice%><%=item.priceunit%></span>, 达到目标价格<span class="expect-price"><%=item.expectPrice%><%=item.priceunit%></span></p>

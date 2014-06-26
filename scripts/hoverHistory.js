@@ -537,6 +537,7 @@ define(function (require, exports) {
             //test href ,the href must begin with
             //**http:**,otherwhise add protocol and
             //hostname to the href
+            var protocal = 'http';
             if (!regUrl.test(href)) {
                 //Deal the situation which href is
                 //**test/one.html**,must begin with
